@@ -1,0 +1,17 @@
+﻿@model CLVD6212_POEPART3.Models.Customer
+@{
+    ViewData["Title"] = "Customer";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<body>
+    <form action="/Customer/Customer" method="post">
+        <p>Please enter your information:</p>
+        <input type="text" name="FirstName" placeholder=Name required>
+        <input type="text" name="LastName" placeholder=Surname required />
+        <input type="text" name="Email" placeholder=Email required />
+        <input type="text" name="PhoneNumber" placeholder=PhoneNumber required />
+        <button type="submit">Submit</button>
+    </form>
+</body>

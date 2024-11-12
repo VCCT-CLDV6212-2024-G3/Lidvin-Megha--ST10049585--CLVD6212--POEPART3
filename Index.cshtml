@@ -1,0 +1,50 @@
+﻿@model CLVD6212_POEPART3.Models.CustomerProfile
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Add Customer Profile</h1>
+    <form asp-action="AddCustomerProfile" method="post">
+        <label for="FirstName">First Name:  </label>
+        <input type="text" name="FirstName" placeholder="First Name" />
+        <br />
+        <label for="LastName">Last Name:  </label>
+        <input type="text" name="LastName" placeholder="Last Name" />
+        <br />
+        <label for="Email">Email:  </label>
+        <input type="email" name="Email" placeholder="Email" />
+        <br />
+        <label for="PhoneNumber">Phone Number:  </label>
+        <input type="text" name="PhoneNumber" placeholder="Phone Number" />
+        <br />
+        <button type="submit">Add Profile</button>
+    </form>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Process The Order</h1>
+    <form asp-action="ProcessOrder" method="post">
+        <label for="OrderID">OrderID:  </label>
+        <input type="text" name="orderId" placeholder="Order ID" />
+        <br />
+        <button type="submit">Process Order</button>
+    </form>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Upload the image</h1>
+    <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <button type="submit">Upload Image</button>
+    </form>
+</div>
+
+<div class="text-center">
+    <h1 class="display-4">Upload the contract</h1>
+    <form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" />
+        <button type="submit">Upload Contract</button>
+    </form>
+</div>
+

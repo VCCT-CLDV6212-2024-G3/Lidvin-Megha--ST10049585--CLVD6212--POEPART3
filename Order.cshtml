@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Order";
+    var customerID = ViewData["CustomerID"];
+    var products = ViewData["Products"] as List<CLVD6212_POEPART3.Models.Product>;
+}
+
+<h2>Welcome to the Order!</h2>
+
+@if (customerID != null)
+{
+    <p>Customer ID: @customerID</p>
+}
+
+<h2>All Products</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Availability</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in products)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.Category</td>
+                <td>@product.Availability</td>
+                <td>
+                    <form asp-controller="Order" asp-action="PlaceOrder" method="post">
+                        <input type="hidden" name="customerID" value="@customerID" />
+                        <input type="hidden" name="productID" value="@product.ProductID" />
+                        <button type="submit">Place Order</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
